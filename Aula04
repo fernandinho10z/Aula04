@@ -1,0 +1,119 @@
+#!/usr/bin/pçython3
+
+# string methods 
+'''
+#lista FOR
+nomes = ['mariana', 'neymar', 'maria', 'ana']
+for nome in nomes:
+    print ('========')
+    print (nome)
+#range 
+for numero in range (0,10,2):
+    print (numero)
+
+#percorrer uma lista de grupos (analistas, administradores, recepcionistas).
+#quando encontrar o grupo adinistradores ele deverá mostrar na tela 'Os Usuários do grupo devem trocar a senha'
+
+grupos = ['analistas', 'administradores', 'recpcionistas']
+
+for grupo in grupos:
+    if 'administradores':
+        print ('Os usuários devem trocar a senha %s' %grupo)
+
+#utilizando o BREAK
+numeros = [1,2,3,4,5,6,7]
+for numero in numeros: 
+    if numero >= 2:
+        print ('vou parar')
+        break
+    print (numero)
+
+#utuilizando o CONTINUE
+numeros = [0,1,2,3,4,5,6,7,8]
+for numero in numeros:
+    if numero == 6:
+        print ('omitindo o numero')
+        continue
+    print (numero)
+
+#utilizando WHILE
+x = 1
+while x < 10:
+    print ('O numero é: %s' %x)
+    x += 1
+print ('Acabou o While')
+
+#while true
+x = 1 
+while True:
+    if x < 10:
+        print ('O numero é %s' %x)
+        x += 1 
+    else:
+        break
+print ('Acabou o while true')
+
+#solicite o nome de usuario e senha, estes nao devem ser iguais, se forem solicite uma nova senha
+usuario = input('Digite o nome de usuario: ')
+senha = input('Digite a senha: ')
+while True:
+    if usuario == senha:
+        senha = input('Digite uma nova senha: ')
+    else:  
+        break
+print ('Senha alterada com sucesso!')
+
+#crie uma estrutura que contenha o nome e os cursos que o aluno realizou (coloque ao menos dois alunos e dois cursos para cada) 
+#solicite ao usuario, qual o curso que deseja buscar
+#percorra a estrutura, encontre quais os alunos que fizeram o curso e mostre seu nome
+
+alunos = [ {"nome":"fernando", "cursos":['python','java']},
+           {"nome":"gabriel", "cursos": ['python', 'ws2012']} ]
+busca = input('Qual o curso deseja buscar: ')
+for aluno in alunos: 
+    for curso in aluno["cursos"]:
+        if curso == busca:
+            print (aluno["nome"])
+
+#list comprehention 
+lista = ['fernando', 'mariana', 'guilherme', 'joao']
+for nome in lista:
+    if nome == 'guilherme':
+       print (nome)
+#ou
+list_comp = [ nome for nome in lista if nome == 'guilherme' ]
+print (list_comp)
+'''
+while True:
+    print ('Digite "q" para sair')
+    
+#crie um script para cadastro de entregas, ele deve solicitar em um primeiro momento nome e sobrenome
+
+    nome = input('Digite seu nome: ')
+    sobrenome = input('Digite seu sobrenome: ')
+    
+    if nome == 'q' or sobrenome == 'q':
+        break
+
+#verifique se estes dados sao do tipo str e grave em um arquivo chamado nome.txt com o padrao: nome.sobrenome
+
+    elif type(nome) == str and type (sobrenome) == str:
+        print (nome, sobrenome)
+        with open (nome + '.' + sobrenome + '.txt', 'a') as f:
+            f.write (nome.lower() +' '+ sobrenome.lower())
+
+#solicite um numero para esta entrega
+
+        num = int(input('Digite um numero para entrega: '))
+
+#verifique se o numero é do tipo int e grave em um numero.txt
+
+        if type(num) == int:
+            print (type(num))
+            with open (str(num) + '.txt', 'a') as f:
+                f.write (str(num))
+
+#caso eu digite 'q' nas duas perguntas ele deve finalizar o script
+  #primeira linha
+    
+
